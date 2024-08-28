@@ -3,7 +3,7 @@
 
 
 <p align="center">
-  <img src="images/pipeline.png" alt="Alt text" width="50%" height="auto">
+  <img src="images/pipeline.png" alt="Alt text" width="80%" height="auto">
 </p>
 
 In this study, we introduce the Diagram Formalization Enhanced Geometry Problem Solver (DFE-GPS), a multi-modal architecture with three core components: a Diagram Formalizer, a Projection module, and a LLM. The LLM processes three types of inputs: diagram features $\mathcal{F}_{D}$ from the Diagram Encoder, formal diagram language representations (ConsCDL and ImgCDL) from the Diagram Formalizer, and natural language inputs containing problem statements and instructions. The Projection module aligns this information in the LLM's semantic space, enabling effective fusion. The LLM then refines the formal representations and generates reasoning steps for problem-solving. We used pre-trained [SigLIP-0.4B]() as the Vision Encoder, [Qwen2-0.5B-Instruct]() as the Lightweight LLM, and [Yi-1.5-Chat]() (9B or 34B) as the primary LLM. The training process is divided into three stages, all of which focus on auto-regressive generation tasks.
