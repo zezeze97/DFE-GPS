@@ -11,12 +11,6 @@ In this study, we introduce the Diagram Formalization Enhanced Geometry Problem 
 - **Stage 2**: The second stage emphasizes training the Projection modules, aligning vision feature $\mathcal{F}_{D}$ with the semantic space of the LLM by generating natural language descriptions and formalized language expressions for the geometric diagrams. During training, the parameters of the Diagram Encoder and LLM are frozen, with only the MLP parameters connecting the visual features and the language model being trainable.
 - **Stage 3**: In the third stage, instruction fine-tuning enables the model to calibrate formalized diagram representations and solve problems. The input consists of geometric diagrams, formalized descriptions with random perturbations simulating Diagram Formalizer errors, and problem text accompanied by calibration and reasoning directives. The model learns to refine ConsCDL and ImgCDL, generating coherent natural language reasoning. During this phase, the parameters of the Diagram Encoder remain fixed, while the MLP and LLM parameters are trainable. Full parameter tuning is applied to the 9B model, whereas LoRA tuning is employed for the 34B model.
 
-## Peformance
-<p align="center">
-  <img src="images/main_expr.png" alt="Alt text" width="50%" height="auto">
-</p>
-
-
 ## Quick Start
 Before running the script, install the following necessary dependencies.
 
@@ -31,3 +25,12 @@ python simple_infer.py
 # image path: ./images/4927.png
 # question: As shown in the diagram, AE/AB=1/4, M is the midpoint of segment AC, BE is parallel to CP, EA is parallel to CP. Find the ratio of the length of line BC to the length of line CD.
 ```
+
+
+## Peformance
+<p align="center">
+  <img src="images/main_expr.png" alt="Alt text" width="50%" height="auto">
+</p>
+
+
+
