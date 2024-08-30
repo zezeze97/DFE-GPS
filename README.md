@@ -6,10 +6,17 @@
   <img src="images/pipeline.png" alt="Alt text" width="100%" height="auto">
 </p>
 
+<details>
+  <summary>Click to expand the detailed description</summary>
+
 In this study, we introduce the Diagram Formalization Enhanced Geometry Problem Solver (DFE-GPS), a multi-modal architecture with three core components: a Diagram Formalizer, a Projection module, and a LLM. The LLM processes three types of inputs: diagram features $\mathcal{F}_{D}$ from the Diagram Encoder, formal diagram language representations (ConsCDL and ImgCDL) from the Diagram Formalizer, and natural language inputs containing problem statements and instructions. The Projection module aligns this information in the LLM's semantic space, enabling effective fusion. The LLM then refines the formal representations and generates reasoning steps for problem-solving. We used pre-trained [SigLIP-0.4B]() as the Vision Encoder, [Qwen2-0.5B-Instruct]() as the Lightweight LLM, and [Yi-1.5-Chat]() (9B or 34B) as the primary LLM. The training process is divided into three stages, all of which focus on auto-regressive generation tasks.
 - **Stage 1**: The first stage focuses on training the Diagram Formalizer module, with training objective of generating formalized language descriptions corresponding to geometric diagrams. During this stage, all parameters of the Vision Encoder and part of the parameters of the Lightweight LLM (via the LoRA) are trainable to enhance the ability to extract visual features.
 - **Stage 2**: The second stage emphasizes training the Projection modules, aligning vision feature $\mathcal{F}_{D}$ with the semantic space of the LLM by generating natural language descriptions and formalized language expressions for the geometric diagrams. During training, the parameters of the Diagram Encoder and LLM are frozen, with only the MLP parameters connecting the visual features and the language model being trainable.
 - **Stage 3**: In the third stage, instruction fine-tuning enables the model to calibrate formalized diagram representations and solve problems. The input consists of geometric diagrams, formalized descriptions with random perturbations simulating Diagram Formalizer errors, and problem text accompanied by calibration and reasoning directives. The model learns to refine ConsCDL and ImgCDL, generating coherent natural language reasoning. During this phase, the parameters of the Diagram Encoder remain fixed, while the MLP and LLM parameters are trainable. Full parameter tuning is applied to the 9B model, whereas LoRA tuning is employed for the 34B model.
+
+</details>
+
+
 
 ## Quick Start
 Before running the script, install the following necessary dependencies.
@@ -22,8 +29,8 @@ You can solve geometric problems using the following script. First, formalize th
 
 ```python
 python simple_infer.py
-# image path: ./images/4927.png
-# question: As shown in the diagram, AE/AB=1/4, M is the midpoint of segment AC, BE is parallel to CP, EA is parallel to CP. Find the ratio of the length of line BC to the length of line CD.
+# image path: ./images/6173.png
+# question: As shown in the diagram, ∠DOB=130°, and the center of circle O is O. Find the measure of ∠BCD.
 ```
 
 
@@ -42,7 +49,7 @@ As shown in the diagram, ∠DOB=130°, and the center of circle O is O. Find the
 由题意得，∠DOB=130°（1），O是圆O的圆心（2）； 由弧的性质（圆内接四边形对角互补）可得，∠BCD = -⌒OBD/2 + 180°（3）； 已知条件（2），由常识可得，∠DOB = ⌒OBD（4）； 已知条件（1）（4），计算可得，⌒OBD = 130°（5）； 已知条件（3）（5），计算可得，∠BCD = 115°（6）； 完成解题。
 
 
-### Evaluation Prompt
+### Evaluation Instruction
 Please first check the reference answer and then the student answer, and make sure you carefully examine each reasoning step with your reason.
 
 1. **Check both the reference answer and the student's answer:**
@@ -62,9 +69,11 @@ Please first check the reference answer and then the student answer, and make su
 
 5. **Final Judgment:** Either 'CORRECT' or 'INCORRECT' based on the step verifications.
 
-### Our 9B
+### DFE-GPS-9B
 
-#### Solution 
+
+<details>
+  <summary>Click to expand the generated solution</summary>
 
 **Step 1:** Identify that ∠DOB = 130° is given.
 
@@ -81,9 +90,15 @@ Please first check the reference answer and then the student answer, and make su
 **Step 7:** Calculate the value of ∠BCD: ∠BCD = -65° + 180° = 115°.
 
 Answer: The final answer is: 115
+  
+</details>
 
 
-#### LLM Evaluation:
+
+
+<details>
+  <summary>Click to expand the gpt4-o-mini evaluation result</summary>
+
 1. **Check both the reference answer and the student's answer:**
    - The student has correctly followed the steps provided in the reference answer. They stated that ∠DOB = 130°, recognized that O is the center of the circle, indicated that the relationship between angles in a cyclic quadrilateral applies here, and correctly derived the measure of ∠BCD. The final answer given by the student is 115°, which matches the reference answer.
 
@@ -117,11 +132,13 @@ Answer: The final answer is: 115
 
 4. **Final Judgment:** CORRECT
    - The student provided a complete and accurate solution with correct reasoning and calculations that align with the reference answer.
-
+</details>
 
 ### GPT-4-turbo
 
-#### Solution: 
+<details>
+  <summary>Click to expand the generated solution</summary>
+
 To find the measure of ∠BCD given that ∠DOB = 130° in a circle centered at O, here are the steps:
 
 1. **Identify Key Points and Angles**:
@@ -140,13 +157,12 @@ To find the measure of ∠BCD given that ∠DOB = 130° in a circle centered at 
      \[
      \text{Measure of } ∠BCD = \frac{1}{2} \times \text{Measure of } ∠DOB = \frac{1}{2} \times 130° = 65°.
      \]
-
-##### Final Answer
-
 The final answer is: **65°**.
+</details>
 
+<details>
+  <summary>Click to expand the gpt4-o-mini evaluation result</summary>
 
-#### LLM Evaluation
 Let's examine and evaluate the student's answer against the reference answer.
 
 ##### Step 1: Reference Answer vs. Student's Answer
@@ -189,11 +205,13 @@ Given the errors in calculation and identifying the angles involved in relation 
 The student's answer is incorrect because they arrived at the wrong measure for ∠BCD due to misapprehending the relationship between the angles and arcs. The final answer should be concluded as **115°** based on the reference answer and proper calculations related to circles.
 
 **The final answer is: 115°.**
-
+</details>
 
 ### InternVL-Chat-V1-5
 
-#### Solution
+<details>
+  <summary>Click to expand the generated solution</summary>
+
 To find the measure of ∠BCD, we can use the fact that the sum of the angles around a point on a circle is 360 degrees. Since ∠DOB is an inscribed angle (an angle formed by two chords that have a common endpoint on the circle), the measure of ∠BCD is half the measure of ∠DOB.
 
 **Step 1: Find the measure of ∠BCD.**
@@ -207,9 +225,11 @@ To find the measure of ∠BCD, we can use the fact that the sum of the angles ar
 
 ##### Final Answer:
 The final answer is: **65°**
+</details>
 
-#### LLM Evaluation
-
+<details>
+  <summary>Click to expand the gpt4-o-mini evaluation result</summary>
+  
 ##### Checking Both the Reference Answer and the Student's Answer
 
 1. **Reference Answer Breakdown**:
@@ -248,10 +268,17 @@ The student's answer is fundamentally flawed due to incorrect reasoning about th
 - Redundancy: 7/10
 
 **Final Judgment: INCORRECT**
+</details>
 
 ### deepseek-math-7b
-#### Solution
+<details>
+  <summary>Click to expand the generated solution</summary>
+
 Since the sum of the angles in a triangle is 180°, we have ∠BOD = 180° - ∠DOB = 180° - 130° = 50°.Since ∠BOD and ∠BCD are inscribed angles that intercept the same arc, they are congruent.\nTherefore, ∠BCD = ∠BOD = 50°. The measure of ∠BCD is ${50°}$. The answer is ${50}$.
+</details>
+
+<details>
+  <summary>Click to expand the gpt4-o-mini evaluation result</summary>
 
 #### LLM Evaluation
 Let's break down both the reference answer and the student's answer step by step, focusing on the reasoning behind the computations to determine accuracy, logical reasoning, and potential redundancy.
@@ -293,9 +320,14 @@ Let's break down both the reference answer and the student's answer step by step
 Considering the steps followed by the student contained substantial errors in reasoning about angle relationships, the overall judgment is:
 
 **Final Judgment**: INCORRECT
-
+</details>
 
 ### Meta-Llama-3.1-8B
+
+
+<details>
+  <summary>Click to expand the generated solution</summary>
+
 #### Solution: Finding the Measure of ∠BCD Using Properties of Circles and Angles
 
 ##### Steps to Solution
@@ -330,8 +362,10 @@ Considering the steps followed by the student contained substantial errors in re
 ##### Final Answer
 
 The final answer is: **50°**
+</details>
 
-#### LLM Eval: Examination of Student Answer Against Reference Answer
+<details>
+  <summary>Click to expand the gpt4-o-mini evaluation result</summary>
 
 ##### Step Verifications
 
@@ -364,7 +398,7 @@ The final answer is: **50°**
 Based on the evaluations of the reasoning and calculations:
 
 **Final Judgment: INCORRECT**
-
+</details>
 
 
 ## Peformance
