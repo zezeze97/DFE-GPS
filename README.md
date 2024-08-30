@@ -22,7 +22,7 @@ In this study, we introduce the Diagram Formalization Enhanced Geometry Problem 
 Before running the script, install the following necessary dependencies.
 
 ```shell
-pip install torch transformers==4.40.0 accelerate pillow sentencepiece
+pip install torch==2.4.0 transformers==4.40.0 accelerate pillow sentencepiece
 ```
 
 You can solve geometric problems using the following script. First, formalize the geometric images with the [diagram formalizer](https://huggingface.co/NaughtyDog97/DiagramFormalizer), and then use the multi-modal [reasing model](https://huggingface.co/NaughtyDog97/DFE-GPS-34B) for problem-solving:
@@ -229,7 +229,7 @@ The final answer is: **65°**
 
 <details>
   <summary>Click to expand the gpt4-o-mini evaluation result</summary>
-  
+
 ##### Checking Both the Reference Answer and the Student's Answer
 
 1. **Reference Answer Breakdown**:
