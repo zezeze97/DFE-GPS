@@ -184,10 +184,8 @@ def main(args):
         try:
             print('Please enter the image path.')
             img_path = input()
-            print(f'image path is {img_path}')
             print('Please enter the question.')
             qs = input()
-            print(f'qs is {qs}')
         except EOFError:
             img_path = ""
             qs = ""
