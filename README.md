@@ -50,6 +50,8 @@ As shown in the diagram, ∠DOB=130°, and the center of circle O is O. Find the
 
 
 ### Evaluation Instruction
+
+```shell
 Please first check the reference answer and then the student answer, and make sure you carefully examine each reasoning step with your reason.
 
 1. **Check both the reference answer and the student's answer:**
@@ -68,6 +70,7 @@ Please first check the reference answer and then the student answer, and make su
    - Redundancy: [Score]/10
 
 5. **Final Judgment:** Either 'CORRECT' or 'INCORRECT' based on the step verifications.
+```
 
 ### DFE-GPS-9B
 
@@ -75,6 +78,7 @@ Please first check the reference answer and then the student answer, and make su
 <details>
   <summary>Click to expand the generated solution</summary>
 
+```shell
 **Step 1:** Identify that ∠DOB = 130° is given.
 
 **Step 2:** Recognize that O is the center of the circle, which implies that ∠DOB is an angle subtended by the arc DB at the center of the circle.
@@ -90,6 +94,7 @@ Please first check the reference answer and then the student answer, and make su
 **Step 7:** Calculate the value of ∠BCD: ∠BCD = -65° + 180° = 115°.
 
 Answer: The final answer is: 115
+```
   
 </details>
 
@@ -99,6 +104,7 @@ Answer: The final answer is: 115
 <details>
   <summary>Click to expand the gpt4-o-mini evaluation result</summary>
 
+```shell
 1. **Check both the reference answer and the student's answer:**
    - The student has correctly followed the steps provided in the reference answer. They stated that ∠DOB = 130°, recognized that O is the center of the circle, indicated that the relationship between angles in a cyclic quadrilateral applies here, and correctly derived the measure of ∠BCD. The final answer given by the student is 115°, which matches the reference answer.
 
@@ -132,13 +138,16 @@ Answer: The final answer is: 115
 
 4. **Final Judgment:** CORRECT
    - The student provided a complete and accurate solution with correct reasoning and calculations that align with the reference answer.
+```
 </details>
+
 
 ### GPT-4-turbo
 
 <details>
   <summary>Click to expand the generated solution</summary>
 
+```shell
 To find the measure of ∠BCD given that ∠DOB = 130° in a circle centered at O, here are the steps:
 
 1. **Identify Key Points and Angles**:
@@ -158,11 +167,13 @@ To find the measure of ∠BCD given that ∠DOB = 130° in a circle centered at 
      \text{Measure of } ∠BCD = \frac{1}{2} \times \text{Measure of } ∠DOB = \frac{1}{2} \times 130° = 65°.
      \]
 The final answer is: **65°**.
+```
 </details>
 
 <details>
   <summary>Click to expand the gpt4-o-mini evaluation result</summary>
 
+```shell
 Let's examine and evaluate the student's answer against the reference answer.
 
 ##### Step 1: Reference Answer vs. Student's Answer
@@ -205,6 +216,7 @@ Given the errors in calculation and identifying the angles involved in relation 
 The student's answer is incorrect because they arrived at the wrong measure for ∠BCD due to misapprehending the relationship between the angles and arcs. The final answer should be concluded as **115°** based on the reference answer and proper calculations related to circles.
 
 **The final answer is: 115°.**
+```
 </details>
 
 ### InternVL-Chat-V1-5
@@ -212,6 +224,7 @@ The student's answer is incorrect because they arrived at the wrong measure for 
 <details>
   <summary>Click to expand the generated solution</summary>
 
+```shell
 To find the measure of ∠BCD, we can use the fact that the sum of the angles around a point on a circle is 360 degrees. Since ∠DOB is an inscribed angle (an angle formed by two chords that have a common endpoint on the circle), the measure of ∠BCD is half the measure of ∠DOB.
 
 **Step 1: Find the measure of ∠BCD.**
@@ -268,18 +281,22 @@ The student's answer is fundamentally flawed due to incorrect reasoning about th
 - Redundancy: 7/10
 
 **Final Judgment: INCORRECT**
+```
 </details>
 
 ### deepseek-math-7b
 <details>
   <summary>Click to expand the generated solution</summary>
 
+```shell
 Since the sum of the angles in a triangle is 180°, we have ∠BOD = 180° - ∠DOB = 180° - 130° = 50°.Since ∠BOD and ∠BCD are inscribed angles that intercept the same arc, they are congruent.\nTherefore, ∠BCD = ∠BOD = 50°. The measure of ∠BCD is ${50°}$. The answer is ${50}$.
+```
 </details>
 
 <details>
   <summary>Click to expand the gpt4-o-mini evaluation result</summary>
 
+```shell
 #### LLM Evaluation
 Let's break down both the reference answer and the student's answer step by step, focusing on the reasoning behind the computations to determine accuracy, logical reasoning, and potential redundancy.
 
@@ -320,6 +337,7 @@ Let's break down both the reference answer and the student's answer step by step
 Considering the steps followed by the student contained substantial errors in reasoning about angle relationships, the overall judgment is:
 
 **Final Judgment**: INCORRECT
+```
 </details>
 
 ### Meta-Llama-3.1-8B
@@ -328,6 +346,7 @@ Considering the steps followed by the student contained substantial errors in re
 <details>
   <summary>Click to expand the generated solution</summary>
 
+```shell
 #### Solution: Finding the Measure of ∠BCD Using Properties of Circles and Angles
 
 ##### Steps to Solution
@@ -362,11 +381,13 @@ Considering the steps followed by the student contained substantial errors in re
 ##### Final Answer
 
 The final answer is: **50°**
+```
 </details>
 
 <details>
   <summary>Click to expand the gpt4-o-mini evaluation result</summary>
 
+```shell
 ##### Step Verifications
 
 1. **Step 1**: The student correctly identifies that ∠DOB = 130°.
@@ -398,6 +419,7 @@ The final answer is: **50°**
 Based on the evaluations of the reasoning and calculations:
 
 **Final Judgment: INCORRECT**
+```
 </details>
 
 
