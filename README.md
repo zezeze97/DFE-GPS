@@ -430,3 +430,15 @@ Based on the evaluations of the reasoning and calculations:
 
 
 
+## Citation
+```shell
+@misc{zhang2024diagramformalizationenhancedmultimodal,
+      title={Diagram Formalization Enhanced Multi-Modal Geometry Problem Solver}, 
+      author={Zeren Zhang and Jo-Ku Cheng and Jingyang Deng and Lu Tian and Jinwen Ma and Ziran Qin and Xiaokai Zhang and Na Zhu and Tuo Leng},
+      year={2024},
+      eprint={2409.04214},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2409.04214}, 
+}
+```
