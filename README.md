@@ -238,11 +238,13 @@ To find the measure of ∠BCD, we can use the fact that the sum of the angles ar
 
 ##### Final Answer:
 The final answer is: **65°**
+```
 </details>
 
 <details>
   <summary>Click to expand the gpt4-o-mini evaluation result</summary>
 
+```shell
 ##### Checking Both the Reference Answer and the Student's Answer
 
 1. **Reference Answer Breakdown**:
