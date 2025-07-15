@@ -425,7 +425,7 @@ Based on the evaluations of the reasoning and calculations:
 </details>
 
 
-## Peformance
+## Performance
 <p align="center">
   <img src="images/main_expr.png" alt="Alt text" width="50%" height="auto">
 </p>
@@ -434,13 +434,12 @@ Based on the evaluations of the reasoning and calculations:
 
 ## Citation
 ```shell
-@misc{zhang2024diagramformalizationenhancedmultimodal,
-      title={Diagram Formalization Enhanced Multi-Modal Geometry Problem Solver}, 
-      author={Zeren Zhang and Jo-Ku Cheng and Jingyang Deng and Lu Tian and Jinwen Ma and Ziran Qin and Xiaokai Zhang and Na Zhu and Tuo Leng},
-      year={2024},
-      eprint={2409.04214},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2409.04214}, 
+@inproceedings{zhang2025diagram,
+  title={Diagram formalization enhanced multi-modal geometry problem solver},
+  author={Zhang, Zeren and Cheng, Jo-Ku and Deng, Jingyang and Tian, Lu and Ma, Jinwen and Qin, Ziran and Zhang, Xiaokai and Zhu, Na and Leng, Tuo},
+  booktitle={ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={1--5},
+  year={2025},
+  organization={IEEE}
 }
 ```
